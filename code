@@ -1,0 +1,16 @@
+console.log('The bot is starting...')
+
+const Twit = require('twit');
+const config = require('./config')
+const T = new Twit(config);
+const tweet = {
+    status: 'You should go check out www.twitter.com/jarrgfx and https://www.youtube.com/channel/UCGIddaQyDxai4nXej4oDQ1A! @jarrgfx'
+}
+T.post('statuses/update', tweet, tweeted);
+function tweeted(err, data, response) {
+if (err) {
+    console.log('Something didnt work!');
+    } else {
+        console.log('Tweeted!');
+    }  
+}
