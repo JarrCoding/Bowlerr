@@ -3,10 +3,12 @@ console.log('The bot is starting...')
 const Twit = require('twit');
 const config = require('./config')
 const T = new Twit(config);
+const rn = Math.floor(Math.random()*1000);
 const tweet = {
-    status: 'U should go check out www.twitter.com/jarrgfx and https://www.youtube.com/channel/UCGIddaQyDxai4nXej4oDQ1A! @jarrgfx'
+    status: 'You should go check out https://www.youtube.com/channel/UCGIddaQyDxai4nXej4oDQ1A! @jarrgfx                                                  ' + rn
+    }
+function timer() {setInterval('tweet', 1000*60*5)
 }
-
 T.post('statuses/update', tweet, tweeted);
 
 function tweeted(err, data, response) {
